@@ -1,0 +1,14 @@
+{
+  "name": "alieva-from-russia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Russian with Nastya - landing site for Russian courses, speaking clubs and 1-on-1 lessons",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
