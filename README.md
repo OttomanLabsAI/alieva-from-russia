@@ -12,12 +12,14 @@ It is a plain static site: no framework, no build step. The files in `public/`
 public/
   index.html            the landing page
   404.html              themed not-found page
+  offer.html            the OttomanLabs.AI offer page (nav tab "My offer")
   favicon.svg           blue "Р" mark, matching the site
   robots.txt
   _headers              security headers + caching rules
   assets/
     css/site.css        the page stylesheet
     css/404.css         styles used only by the 404 page
+    css/offer.css       styles used only by the offer page
     js/site.js          mobile navigation toggle
 wrangler.jsonc          assets-only Worker config
 package.json            wrangler devDependency + scripts
@@ -66,6 +68,15 @@ absolute URLs because they are not ours to host:
 
 If the Tilda CDN is ever retired, the portraits should be re-uploaded into
 `public/assets/img/` and the two `<img src>` values pointed at them.
+
+## The offer tabs
+
+While the site is in its pitch phase, the first nav tab (**Original**) links
+out to the current live page at `https://alievafromrussia.tilda.ws/`, and the
+**My offer** tab opens `offer.html` - the OttomanLabs.AI flyer rebuilt in the
+site's own design language, including a before/after comparison with the
+original. The offer page is `noindex`ed. When the site transfers to the owner,
+both tabs and the offer page come out as their own release.
 
 ## Notes
 

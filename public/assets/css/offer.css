@@ -1,0 +1,42 @@
+/* Styles used only by the offer page - the main site CSS is untouched. */
+.offer-hero{padding:84px 0 24px}
+.offer-hero h1{font-size:clamp(36px,5vw,58px);margin-top:22px;max-width:840px}
+.offer-hero p.lead{color:var(--grey);font-size:18.5px;margin:24px 0 32px;max-width:640px}
+.offer-hero h1 .u{position:relative;white-space:nowrap}
+.offer-hero h1 .u::after{
+  content:"";position:absolute;left:0;right:0;bottom:6px;height:.34em;
+  background:var(--red-soft);z-index:-1;border-radius:6px;
+}
+.band{background:var(--cloud);border-block:1px solid var(--line)}
+.band .tile,.band .step{background:#fff}
+
+/* ---------- BEFORE / AFTER ---------- */
+.cmp{display:grid;gap:14px}
+.cmp .row{display:grid;grid-template-columns:1fr 1fr;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
+.cmp .before,.cmp .now{padding:20px 26px;font-size:15.5px}
+.cmp .before{background:var(--cloud);color:var(--grey);border-right:1px solid var(--line)}
+.cmp .now{color:#333846}
+.cmp small{display:block;font-family:'Unbounded',sans-serif;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+.cmp .before small{color:var(--red)}
+.cmp .now small{color:var(--blue)}
+.alsochips{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+@media(max-width:760px){
+  .cmp .row{grid-template-columns:1fr}
+  .cmp .before{border-right:0;border-bottom:1px solid var(--line)}
+}
+
+/* ---------- STEPS ---------- */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.steps.three{grid-template-columns:repeat(3,1fr)}
+.step{position:relative;background:var(--cloud);border:1px solid var(--line);border-radius:var(--r-md);padding:24px 22px}
+.step .num{font-family:'Unbounded',sans-serif;font-weight:700;font-size:26px;color:var(--blue);display:block}
+.step h3{font-size:16px;margin:12px 0 8px}
+.step p{color:var(--grey);font-size:14px}
+.step.here{border-color:var(--blue);box-shadow:0 16px 34px -22px rgba(46,91,255,.55)}
+.step .flag{position:absolute;top:-12px;right:14px;background:var(--red);color:#fff;font-weight:700;font-size:11.5px;border-radius:100px;padding:5px 12px;letter-spacing:.04em}
+.how-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+@media(max-width:960px){
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .steps.three{grid-template-columns:1fr}
+}
+@media(max-width:560px){.steps{grid-template-columns:1fr}}
