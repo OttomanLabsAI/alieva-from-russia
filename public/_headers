@@ -15,3 +15,20 @@
 
 /
   Cache-Control: public, max-age=0, must-revalidate
+
+# Vocab app: dictionary and pinned vendor bundles are immutable (renamed when
+# they change); config and manifest short; the service worker never cached.
+/vocab/dict.json
+  Cache-Control: public, max-age=31536000, immutable
+/vocab/vendor/*
+  Cache-Control: public, max-age=31536000, immutable
+/vocab/icons/*
+  Cache-Control: public, max-age=604800
+/vocab/
+  Cache-Control: public, max-age=300
+/vocab/config.js
+  Cache-Control: public, max-age=300
+/vocab/manifest.json
+  Cache-Control: public, max-age=300
+/vocab/sw.js
+  Cache-Control: no-cache

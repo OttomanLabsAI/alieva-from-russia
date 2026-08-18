@@ -13,6 +13,8 @@ public/
   index.html            the landing page
   404.html              themed not-found page
   offer.html            the OttomanLabs.AI offer page (nav tab "My offer")
+  vocab/                the Russian Vocabulary Builder app (nav tab "Russian vocab"),
+                        vendored from OttomanLabsAI/RussianVocab and rehomed to /vocab/
   favicon.svg           blue "Р" mark, matching the site
   robots.txt
   _headers              security headers + caching rules
@@ -69,14 +71,26 @@ absolute URLs because they are not ours to host:
 If the Tilda CDN is ever retired, the portraits should be re-uploaded into
 `public/assets/img/` and the two `<img src>` values pointed at them.
 
-## The offer tabs
+## The tabs
 
-While the site is in its pitch phase, the first nav tab (**Original**) links
-out to the current live page at `https://alievafromrussia.tilda.ws/`, and the
-**My offer** tab opens `offer.html` - the OttomanLabs.AI flyer rebuilt in the
-site's own design language, including a before/after comparison with the
-original. The offer page is `noindex`ed. When the site transfers to the owner,
-both tabs and the offer page come out as their own release.
+The nav is three tabs plus the free-lesson button: **Website** (the landing
+page), **Russian vocab** (the vocabulary app at `/vocab/`), and **My offer**
+(`offer.html` - the OttomanLabs.AI flyer rebuilt in the site's own design
+language, with a before/after comparison against the original page, which it
+links to at `https://alievafromrussia.tilda.ws/`). The offer page is
+`noindex`ed; it and the vocab tab come out as their own release when the site
+transfers to the owner.
+
+## The vocab app
+
+`public/vocab/` is the Russian Vocabulary Builder from the
+`OttomanLabsAI/RussianVocab` repo, served as-is apart from rehoming: absolute
+paths gained the `/vocab/` prefix (including the service-worker registration
+and its network-first list), and share links became `/vocab/?s=CODE` because
+the `/s/CODE` form needs the SPA fallback this site doesn't use. Its Firebase
+sign-in keys ship in `vocab/config.js`; without network access the app runs in
+device-only mode. Update it by re-copying from the source repo and re-applying
+those rewrites.
 
 ## Notes
 
